@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout Code') {
+            steps {
+                echo "Fetching code from Git..."
+                checkout scm 
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo "stage-1"
+                // Wrap the python command in an 'sh' block so Jenkins executes it in the terminal
+                // Use 'bat "python cloud.py"' if your Jenkins server runs on Windows
+                'bat' 'python cloud.py'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "stage-2"
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo "stage-3"
+            }
+        }
+    }
+}
