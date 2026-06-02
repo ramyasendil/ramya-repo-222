@@ -14,7 +14,7 @@ pipeline {
                 echo "stage-1"
                 // Wrap the python command in an 'sh' block so Jenkins executes it in the terminal
                 // Use 'bat "python cloud.py"' if your Jenkins server runs on Windows
-                'bat' 'C:\Users\sendi\AppData\Local\Python\bin\python.exe cloud.py'
+                'bat' 'C:\\Users\\sendi\\AppData\\Local\\Python\\bin\\python.exe cloud.py'
             }
         }
         
